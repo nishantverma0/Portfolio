@@ -94,43 +94,32 @@ export function ContactSection() {
   const selectedReason = watch("reason");
 
   const onSubmit = async (values: ContactFormValues) => {
-  const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID?.trim();
+  const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID?.trim();
+  const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID?.trim();
+  const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY?.trim();
 
-const templateId =
-  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID?.trim();
-
-const publicKey =
-  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY?.trim();
-
-console.log("Service ID:", serviceId);
-console.log("Template ID:", templateId);
-console.log("Public Key:", publicKey);
+  console.log("Service ID:", serviceId);
+  console.log("Template ID:", templateId);
+  console.log("Public Key:", publicKey);
 
   try {
     if (!serviceId) {
-  throw new Error(
-    "NEXT_PUBLIC_EMAILJS_SERVICE_ID is missing"
-  );
-}
+      throw new Error("NEXT_PUBLIC_EMAILJS_SERVICE_ID is missing");
+    }
 
-if (!templateId) {
-  throw new Error(
-    "NEXT_PUBLIC_EMAILJS_TEMPLATE_ID is missing"
-  );
-}
+    if (!templateId) {
+      throw new Error("NEXT_PUBLIC_EMAILJS_TEMPLATE_ID is missing");
+    }
 
-if (!publicKey) {
-  throw new Error(
-    "NEXT_PUBLIC_EMAILJS_PUBLIC_KEY is missing"
-  );
-}
+    if (!publicKey) {
+      throw new Error("NEXT_PUBLIC_EMAILJS_PUBLIC_KEY is missing");
+    }
 
-setPreviewMode(false);
+    setPreviewMode(false);
 
     await emailjs.send(
-      serviceId!,
-      templateId!,
+      serviceId,
+      templateId,
       {
         from_name: values.name,
         from_email: values.email,
@@ -141,7 +130,7 @@ setPreviewMode(false);
         to_email: profile.email,
       },
       {
-        publicKey: publicKey!,
+        publicKey,
       }
     );
 
@@ -156,31 +145,33 @@ setPreviewMode(false);
     setTimeout(() => {
       setSent(false);
     }, 3200);
-  } } catch (error: unknown) {
-  console.error("EmailJS Error:", error);
+  } catch (error: unknown) {
+    console.error("EmailJS Error:", error);
 
-  if (
-    typeof error === "object" &&
-    error !== null &&
-    "status" in error &&
-    "text" in error
-  ) {
-    const emailError = error as {
-      status: number;
-      text: string;
-      message?: string;
-    };
+    if (
+      typeof error === "object" &&
+      error !== null &&
+      "status" in error &&
+      "text" in error
+    ) {
+      const emailError = error as {
+        status: number;
+        text: string;
+        message?: string;
+      };
 
-    console.error("Status:", emailError.status);
-    console.error("Text:", emailError.text);
+      console.error("Status:", emailError.status);
+      console.error("Text:", emailError.text);
 
-    toast.error(
-      emailError.text || emailError.message || "Failed to send email."
-    );
-  } else {
-    toast.error("Failed to send email.");
+      toast.error(
+        emailError.text || emailError.message || "Failed to send email."
+      );
+    } else if (error instanceof Error) {
+      toast.error(error.message);
+    } else {
+      toast.error("Failed to send email.");
+    }
   }
-}
 };
 
   return (
