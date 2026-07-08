@@ -156,15 +156,31 @@ setPreviewMode(false);
     setTimeout(() => {
       setSent(false);
     }, 3200);
-  } catch (error: any) {
-    console.error("EmailJS Error:", error);
-    console.error("Status:", error?.status);
-    console.error("Text:", error?.text);
+  } } catch (error: unknown) {
+  console.error("EmailJS Error:", error);
+
+  if (
+    typeof error === "object" &&
+    error !== null &&
+    "status" in error &&
+    "text" in error
+  ) {
+    const emailError = error as {
+      status: number;
+      text: string;
+      message?: string;
+    };
+
+    console.error("Status:", emailError.status);
+    console.error("Text:", emailError.text);
 
     toast.error(
-      error?.text || error?.message || "Failed to send email."
+      emailError.text || emailError.message || "Failed to send email."
     );
+  } else {
+    toast.error("Failed to send email.");
   }
+}
 };
 
   return (
