@@ -10,13 +10,11 @@ import { aboutHighlights, focusAreas, timeline } from "@/lib/data";
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative py-24 md:py-32">
-      <div className="container">
-        <SectionHeading
-          eyebrow="About"
-          title="An AI engineer focused on shipping useful intelligence."
-          description="Nishant works where LLM reasoning, backend reliability, retrieval quality and clear product interfaces meet."
-        />
+<SectionHeading
+  eyebrow="About Me"
+  title="Building Production-Ready AI Systems"
+  description="I build Generative AI, Agentic AI, and AI Automation solutions using LLMs, LangGraph, LangChain, RAG, FastAPI, n8n, vector databases, and modern cloud technologies to solve real-world business problems."
+/>
 
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal>
@@ -34,26 +32,51 @@ export function AboutSection() {
               <div className="relative p-6 md:p-8">
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-cyan-300/8 to-transparent" />
                 <div className="space-y-5 font-mono text-sm leading-7 text-white/72">
-                  <p>
-                    <span className="text-cyan-200">const</span>{" "}
-                    <span className="text-white">engineer</span>{" "}
-                    <span className="text-white/36">=</span>{" "}
-                    <span className="text-emerald-200">&quot;Nishant Verma&quot;</span>
-                  </p>
-                  <p>
-                    <span className="text-cyan-200">focus</span>
-                    <span className="text-white/36">:</span>{" "}
-                    <span>LLM systems, RAG pipelines, LangGraph agents, FastAPI backends</span>
-                  </p>
-                  <p>
-                    <span className="text-cyan-200">principles</span>
-                    <span className="text-white/36">:</span>{" "}
-                    <span>clarity, traceability, latency, reliability, measurable output</span>
-                  </p>
-                  <p className="text-white/46">
-                    {"// The goal is not just an impressive demo. It is an AI product that can be trusted, inspected and improved."}
-                  </p>
-                </div>
+  <p>
+    <span className="text-cyan-200">const</span>{" "}
+    <span className="text-white">engineer</span>{" "}
+    <span className="text-white/36">=</span>{" "}
+    <span className="text-emerald-200">&quot;Nishant Verma&quot;</span>;
+  </p>
+
+  <p>
+    <span className="text-cyan-200">role</span>
+    <span className="text-white/36">:</span>{" "}
+    <span className="text-white">
+      AI Engineer | Generative AI | Agentic AI
+    </span>
+  </p>
+
+  <p>
+    <span className="text-cyan-200">specialization</span>
+    <span className="text-white/36">:</span>{" "}
+    <span>
+      LLMs • LangGraph • LangChain • RAG • Multi-Agent Systems • FastAPI
+    </span>
+  </p>
+
+  <p>
+    <span className="text-cyan-200">currently_building</span>
+    <span className="text-white/36">:</span>{" "}
+    <span>
+      AI Agents • Enterprise RAG • AI Copilots • Intelligent Backend Systems
+    </span>
+  </p>
+
+  <p>
+    <span className="text-cyan-200">engineering_principles</span>
+    <span className="text-white/36">:</span>{" "}
+    <span>
+      Reliability • Scalability • Observability • Security • Low Latency
+    </span>
+  </p>
+
+  <p className="text-white/50">
+    {
+      "// Building production-ready AI products that businesses can deploy, trust, and scale."
+    }
+  </p>
+</div>
 
                 <div className="mt-8 grid gap-4">
                   {aboutHighlights.map((highlight, index) => (
