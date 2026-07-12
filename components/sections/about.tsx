@@ -12,7 +12,6 @@ export function AboutSection() {
   return (
     <section id="about" className="relative py-24 md:py-32">
       <div className="container">
-
         <SectionHeading
           eyebrow="About Me"
           title="Building Production-Ready AI Systems"
