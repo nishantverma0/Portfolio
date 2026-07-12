@@ -82,8 +82,12 @@ export function AboutSection() {
                     <Cpu className="h-5 w-5" />
                   </span>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">Current Focus</h3>
-                    <p className="text-sm text-muted-foreground">Production AI workflows</p>
+                    <h3 className="text-lg font-semibold text-white">
+                      Generative AI & Agentic AI Expertise
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Building production-ready AI applications with LLMs, RAG, LangGraph and FastAPI.
+                    </p>
                   </div>
                 </div>
 
