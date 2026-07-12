@@ -10,11 +10,14 @@ import { aboutHighlights, focusAreas, timeline } from "@/lib/data";
 
 export function AboutSection() {
   return (
-<SectionHeading
-  eyebrow="About Me"
-  title="Building Production-Ready AI Systems"
-  description="I build Generative AI, Agentic AI, and AI Automation solutions using LLMs, LangGraph, LangChain, RAG, FastAPI, n8n, vector databases, and modern cloud technologies to solve real-world business problems."
-/>
+    <section id="about" className="relative py-24 md:py-32">
+      <div className="container">
+
+        <SectionHeading
+          eyebrow="About Me"
+          title="Building Production-Ready AI Systems"
+          description="I build Generative AI, Agentic AI, and AI Automation solutions using LLMs, LangGraph, LangChain, RAG, FastAPI, n8n, vector databases, and modern cloud technologies to solve real-world business problems."
+        />
 
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal>
