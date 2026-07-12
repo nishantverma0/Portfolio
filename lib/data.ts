@@ -28,8 +28,10 @@ export const profile = {
   github: "https://github.com/nishantverma0",
   linkedin: "https://linkedin.com/in/nishantv003",
   tagline:
-    "Building Production-Grade AI Systems using LLMs, LangGraph, LangChain, RAG, FastAPI and Modern Cloud Technologies.",
-  availability: "Open to AI engineering roles, backend AI systems, and applied GenAI product work."
+  "Building production-ready Generative AI, Agentic AI, and LLM applications using LangGraph, LangChain, RAG, FastAPI, and cloud-native technologies.",
+
+availability:
+  "Open to AI Engineer, Generative AI Engineer, Agentic AI Engineer, LLM Engineer, and Applied AI opportunities."
 };
 
 export const navItems = [
@@ -61,19 +63,25 @@ export const heroMetrics = [
 ];
 
 export const aboutHighlights = [
-  "I design AI products where retrieval, model orchestration, backend APIs and user experience work as one system.",
-  "My current focus is production-grade LLM applications with LangGraph, LangChain, vector databases, tool calling, structured outputs and robust evaluation loops.",
-  "I enjoy turning fuzzy business workflows into reliable AI services: intake, routing, reasoning, validation, observability and deployment.",
-  "The through-line across my projects is practical intelligence: useful automation, clear interfaces, measurable outputs and maintainable engineering."
+  "Specialized in building production-grade Generative AI and Agentic AI applications powered by LLMs, LangGraph, LangChain, and Retrieval-Augmented Generation (RAG).",
+
+  "Experienced in developing autonomous AI agents, multi-agent systems, vector search, tool calling, structured outputs, and scalable FastAPI backends.",
+
+  "Passionate about designing end-to-end AI products that combine intelligent reasoning, workflow automation, cloud deployment, and exceptional user experiences.",
+
+  "Focused on building reliable, secure, and production-ready AI systems with evaluation pipelines, guardrails, observability, and modern DevOps practices."
 ];
 
 export const focusAreas = [
-  "Agentic workflows with LangGraph",
-  "RAG systems and vector search",
-  "FastAPI services for AI products",
-  "Evaluation, observability and guardrails",
+  "Agentic AI & Multi-Agent Systems",
+  "LLMs (OpenAI • Gemini • Claude • Ollama)",
+  "LangGraph & LangChain Orchestration",
+  "RAG & Vector Databases",
+  "FastAPI AI Backends",
+  "Guardrails • Evaluation • Observability",
   "Cloud-ready Python backends",
-  "Human-centered AI interfaces"
+  "Human-centered AI interfaces",
+  "Workflow Automation (n8n)"
 ];
 
 export const skillGroups = [
