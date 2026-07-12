@@ -324,10 +324,11 @@ export function AILabScene() {
 
       {guideReady ? (
         <motion.div
-          className="pointer-events-auto absolute bottom-24 right-6 hidden w-[320px] rounded-2xl border border-white/12 bg-black/45 p-4 text-white shadow-panel backdrop-blur-2xl xl:block"          initial={{ opacity: 0, y: 16, scale: 0.96 }}
+          className="pointer-events-auto absolute bottom-24 right-6 hidden w-[320px] rounded-2xl border border-white/12 bg-black/45 p-4 text-white shadow-panel backdrop-blur-2xl xl:block"
+          initial={{ opacity: 0, y: 16, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-        >
+          >
           <div className="mb-3 flex items-start gap-3">
             <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-cyan-300/15 text-cyan-100">
               <Bot className="h-4 w-4" />
