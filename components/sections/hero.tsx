@@ -35,11 +35,11 @@ const socialLinks = [
 export function HeroSection() {
   return (
     <section
-      id="home"
-      className="relative isolate flex min-h-[92svh] items-center overflow-hidden border-b border-white/10"
-    >
+  id="home"
+  className="relative isolate flex min-h-screen lg:min-h-[105vh] items-center overflow-hidden border-b border-white/10"
+>
       <AILabScene />
-      <div className="container relative z-10 pt-32 md:pt-36">
+      <div className="container relative z-10 pt-32 pb-32 md:pt-36 md:pb-40">
         <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
           <div className="max-w-4xl">
             <motion.div
